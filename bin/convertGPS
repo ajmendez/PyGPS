@@ -1,0 +1,64 @@
+#!/bin/bash
+
+gpsbabel='/Applications/GPSBabelFE.app/Contents/MacOS/gpsbabel'
+
+testfile="$HOME/tmp/gps/BT747log.bin"
+outfile="$HOME/tmp/gps/BT747.gpx"
+outfile2="$HOME/tmp/gps/BT747b.gpx"
+
+### Get Convert the binary files into nice gpx
+# $gpsbabel -t -r -w -i mtk-bin -f $testfile -o gpx -F $outfile
+
+
+### Do some filtering
+echo $outfile
+
+[[ -f "$outfile" ]] && rm $outfile
+
+$gpsbabel -t -i mtk-bin -f $testfile \
+          -x track,merge,split=1hr,title="LOG # %c" \
+          -o gpx -F $outfile
+#           
+#           -x duplicate,location,shortname \
+# $gpsbabel -i gpx -f $outfile \
+#           -x track,trk2seg,split=30m,title="LOG # %c" \
+#           -o gpx -F $outfile2
+
+grep -n trkseg $outfile | wc -l 
+
+# ls $HOME/tmp/gps/
+
+# Use the m241 format to connect with the unit serially and m241-bin to read files saved by the device.
+# gpsbabel -i gpx -f 12345.gpx -o html,stylesheet=green.css,encrypt -F 12345.html
+
+# this is me:
+# mtk, mtk-bin
+
+# fix heights?
+# -x height,wgs84tomsl
+
+# split by day:
+# -x track,pack,split,title="ACTIVE LOG # %D"
+
+# split by four hour:
+# -x track,pack,split=4h,title="LOG # %c"
+
+# split by distance:
+# -x track,pack,sdistance=0.1k"
+
+# Remove Duplicates:
+# -x duplicate,location,shortname
+
+# remove duplicates by some distance:
+# -x position,distance=1f
+
+# filter by hdop / vop:
+# -x discard,hdop=10,vdop=20,hdopandvdop
+
+# filter by number of sats:
+# -x discard,sat=3
+
+# convert into segment:
+# -x transform,trk=wpt
+
+# -x sort,time 
