@@ -1,4 +1,5 @@
 # parse the individual gps files
+import os
 import csv
 import collections
 import fnmatch
@@ -157,6 +158,17 @@ class GPSFile(object):
         elif '.cvs' in filename:
             self.data = CSV(filename)
     
+
+
+
+
+def walk(fcn=None, directory=None):
+    if directory is None:
+        directory = files.niceFile('~/data/gps')
+    if fcn is None:
+        fcn = lambda a,dir,files: for f in files: yield file
+    
+    for file in os.path.walk(directory, fcn, )
 
 
 
