@@ -58,7 +58,6 @@ class CSV(object):
         time is a datetime object at gmt
         # 2013-08-31T03:06:27.000Z
         # '2012/10/24', '07:11:47.000'
-        
         '''
         return GPSITEM( float(gpsitem.lat),
                         float(gpsitem.lon),
@@ -142,10 +141,6 @@ class GPX(object):
                            gpsitem.time,
                            '%Y-%m-%dT%H:%M:%S.000Z'),
                 )
-                    
-                    
-                    
-    
 
 
 
@@ -160,17 +155,7 @@ class GPSFile(object):
     
 
 
-
-
-def walk(fcn=None, directory=None):
-    if directory is None:
-        directory = files.niceFile('~/data/gps')
-    if fcn is None:
-        fcn = lambda a,dir,files: for f in files: yield file
-    
-    for file in os.path.walk(directory, fcn, )
-
-
+s
 
 # @profile
 def test():
