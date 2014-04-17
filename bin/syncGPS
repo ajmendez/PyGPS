@@ -1,0 +1,12 @@
+gpsbabel -t -i mtk,erase=0,erase_only=0,log_enable=0 -f /dev/cu.usbmodemfd130 -x track,move=1d0h0m0s -o unicsv,format=0,filename=0 -F /Users/ajmendez/Desktop/test.csv
+
+gpsbabel -t -i mtk,erase=0,erase_only=0,log_enable=0 -f /dev/cu.usbmodemfd130 -o gpx,suppresswhite=0,logpoint=0,humminbirdextensions=0,garminextensions=0 -F /Users/ajmendez/Desktop/test2.html -o gpx -F /var/folders/3k/2zxr18r16dl_lcj0r1qtzzsh0000gn/T/qt_temp.L40103
+
+
+gpsbabel -t -i mtk,erase=0,erase_only=0,log_enable=0 -f /dev/cu.usbmodemfd130  -o mtk-bin,format=0,filename=0 -F /Users/ajmendez/Desktop/test.bin
+
+
+
+gpsbabel -t -i mtk,erase=0,erase_only=0,log_enable=0 -f /dev/cu.usbmodemfd130 -o iblue747,snwhite=0,snupper=0,snunique=0,prefer_shortnames=0 -F
+
+
