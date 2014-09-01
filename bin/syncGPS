@@ -10,3 +10,4 @@ gpsbabel -t -i mtk,erase=0,erase_only=0,log_enable=0 -f /dev/cu.usbmodemfd130  -
 gpsbabel -t -i mtk,erase=0,erase_only=0,log_enable=0 -f /dev/cu.usbmodemfd130 -o iblue747,snwhite=0,snupper=0,snunique=0,prefer_shortnames=0 -F
 
 
+# wget  ftp://tsi0001:tweyet@210.68.183.169/MTK7d.EPO 

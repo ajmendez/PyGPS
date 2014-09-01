@@ -1,5 +1,18 @@
 #!/bin/bash
 
+# Information;
+# http://gis.stackexchange.com/questions/52271/automating-batch-load-of-multiple-gpx-files-into-postgis
+# http://stackoverflow.com/questions/7235743/how-can-i-load-multiple-gpx-files-into-postgis
+# http://mentalized.net/journal/2013/04/07/import-gpx-data-to-postgis/
+# http://www.bostongis.com/printerfriendly.aspx?content_name=ogr_cheatsheeto
+#http://mentalized.net/journal/2013/04/05/how-to-install-postgis-on-mountain-lion/
+#http://stackoverflow.com/questions/7235743/how-can-i-load-multiple-gpx-files-into-postgis
+# http://gis.stackexchange.com/questions/52271/automating-batch-load-of-multiple-gpx-files-into-postgis
+
+
+
+
+
 gpsbabel='/Applications/GPSBabelFE.app/Contents/MacOS/gpsbabel'
 
 testfile="$HOME/tmp/gps/BT747log.bin"
